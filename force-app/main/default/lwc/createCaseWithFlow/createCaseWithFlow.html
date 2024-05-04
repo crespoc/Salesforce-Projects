@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-horizontal_small">
+            <lightning-input type="text" label="Subject" value={subject} onchange={handleSubjectChange} required></lightning-input>
+            <lightning-input type="text" label="Description" value={description} onchange={handleDescChange} required></lightning-input>
+        </div>
+        <div class="slds-align_absolute-center slds-p-top_large">
+            <lightning-button variant="brand" label="Create Case" onclick={handleCreate}></lightning-button>
+        </div>
+    </lightning-card>
+    <lightning-flow flow-api-name={flowName} flow-input-variables={inputVariables} 
+            onstatuschange={handleStatusChange}></lightning-flow>
+</template>
+
+

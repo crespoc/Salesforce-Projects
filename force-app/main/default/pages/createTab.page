@@ -1,0 +1,13 @@
+<apex:page standardController="Account">
+    <apex:tabPanel selectedTab="Tab1">
+        <apex:tab label="Account" name="A">
+            <apex:detail subject="{!account}" relatedList="false"/>
+        </apex:tab>
+        <apex:tab label="Contact" name="Tab2">
+            <apex:relatedList subject="{!account}" List="Contacts"/>
+        </apex:tab>
+        <apex:tab label="Opportunity" name="Tab3">
+            <apex:relatedList subject="{!account}" List="Opportunities"/>
+        </apex:tab>
+    </apex:tabPanel>
+</apex:page>

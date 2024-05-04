@@ -1,0 +1,12 @@
+<apex:page controller="ActionDemoController" id="page">
+    <apex:form id="fm" title="main block">
+        <apex:pageBlock id="pb1">
+            <apex:commandButton value="call show" action="{!show}" reRender="pb2"/>
+        </apex:pageBlock>
+
+        <apex:pageBlock title="result" id="pb2">
+            {!name}
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

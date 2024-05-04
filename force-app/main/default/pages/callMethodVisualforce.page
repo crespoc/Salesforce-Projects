@@ -1,0 +1,32 @@
+<apex:page controller="tabController2">
+    <script>
+        // jsFunc is called from tab2 (referred by id in apex:tab) 
+         function jsFunc(){
+             actionfun();
+         }
+     </script>
+
+    <apex:form>
+        <apex:tabPanel id="tabP" switchType="ajax">
+            <apex:tab label="Energy Accounts">
+                <apex:pageBlock>
+                    <apex:pageBlockTable value="{!accList}" var="a">
+                        <apex:column value="{!a.name}"/>
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </apex:tab>
+
+            <apex:tab label="Contact Records" oncomplete="jsFunc()" id="tab2">
+                <apex:pageBlock>
+                    <apex:pageBlockTable value="{!conList}" var="c">
+                        <apex:column value="{!c.lastName}"/>
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </apex:tab>
+
+        </apex:tabPanel>
+
+        <apex:actionFunction name="actionfun" action="{!contactRec}" reRender="tabP"/>
+
+    </apex:form>
+</apex:page>

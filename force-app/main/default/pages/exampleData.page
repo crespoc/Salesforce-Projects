@@ -1,0 +1,8 @@
+<apex:page controller="DemoController">
+    <apex:form>
+        <apex:pageBlock>
+            {!name} <br/>
+            {!city}
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

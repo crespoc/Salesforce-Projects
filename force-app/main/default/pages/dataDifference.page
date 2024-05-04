@@ -1,0 +1,62 @@
+<apex:page standardController="Account" recordSetVar="Accounts">
+    <apex:form >
+        <apex:pageBlock title="pageBlockTable Demo">            
+        	<apex:pageBlockTable value="{!Accounts}" var="a" border="1" cellpadding="1">
+                <apex:facet name="caption">Account Records</apex:facet>
+            	<apex:column headerValue="Name" value="{!a.Name}"/>
+                <apex:column value="{!a.Industry}">
+                    <apex:facet name="header">Industry</apex:facet>
+                </apex:column>    
+                <apex:column value="{!a.Phone}">
+                    <apex:facet name="header">Phone</apex:facet>
+                </apex:column>
+                <!--<apex:facet name="footer">Account Records Ends</apex:facet> -->
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+    	<apex:pageBlock title="DataTable Demo">            
+        	<apex:dataTable value="{!Accounts}" var="a" border="1" cellpadding="1">
+                <apex:facet name="caption">Account Records</apex:facet>
+            	<apex:column headerValue="Name" value="{!a.Name}"/>
+                <apex:column value="{!a.Industry}">
+                    <apex:facet name="header">Industry</apex:facet>
+                </apex:column>    
+                <apex:column value="{!a.Phone}">
+                    <apex:facet name="header">Phone</apex:facet>
+                </apex:column>
+                <!--<apex:facet name="footer">Account Records Ends</apex:facet> -->
+            </apex:dataTable>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Datalist Demo">            
+        	<apex:dataList value="{!Accounts}" var="a">
+               <apex:outputField value="{!a.Industry}"/>   
+            </apex:dataList>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="repeat Demo">            
+        	<apex:repeat value="{!Accounts}" var="a">
+                <apex:outputField value="{!a.Name}"/>  <br/>
+               <apex:outputField value="{!a.Industry}"/>    <br/>
+               <apex:outputField value="{!a.Phone}"/>    
+            </apex:repeat> 
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="repeat Demo">            
+        	<apex:repeat value="{!Accounts}" var="a">
+               	<table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Industry</th>
+                        <th>Phone</th>
+                    </tr>
+                    <tr>
+                      <td>{!a.Name}</td>	
+                      <td>{!a.Industry}</td>
+                      <td>{!a.Phone}</td>
+                    </tr>
+                </table>
+            </apex:repeat> 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

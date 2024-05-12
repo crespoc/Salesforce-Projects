@@ -1,0 +1,20 @@
+<template>
+    <lightning-card  variant="Narrow"  title={objectApiName} icon-name="standard:account">
+      <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+      <p class="slds-p-horizontal_small">
+    
+        <lightning-record-form 
+              object-api-name={objectApiName}
+              fields={fieldList}
+              onsuccess={handleAccountCreate}>
+    
+        </lightning-record-form>
+    
+    
+    
+    
+    
+      </p>
+      <p slot="footer">{objectApiName} Creation</p>
+    </lightning-card>
+    </template>
